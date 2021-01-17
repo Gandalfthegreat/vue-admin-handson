@@ -36,7 +36,24 @@ export const constantRoutes = [
     component: () => import('@/views/login/index'),
     hidden: true
   },
-
+  {
+    path: '/excel',
+    component: Layout,
+    redirect: '/excel/export-excel',
+    name: 'excel',
+    meta: {
+      title: 'excel',
+      icon: 'excel'
+    },
+    children: [
+      {
+        path: 'export-excel',  
+        component: ()=>import('@/views/helloWorld/'),
+        name: 'exportExcel',
+        meta: { title: 'exportExcel' }
+      }
+    ]
+  },
   {
     path: '/404',
     component: () => import('@/views/404'),
