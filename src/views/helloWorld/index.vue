@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>HelloWorld</h1>
     <input v-model="msg" />
     {{ msg }}
@@ -78,9 +78,12 @@ export default {
 </script>
 
 <style scoped>
-.box {
+.container .box {
   width: 200px;
   height: 200px;
+}
+.container /deep/ .el-button {
+  width: 400px;
 }
 </style>
 
