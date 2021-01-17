@@ -47,20 +47,16 @@ export const constantRoutes = [
     },
     children: [
       {
-<<<<<<< HEAD
-        path: 'export-excel',  
+        path: 'export-excel',
         component: ()=>import('@/views/helloWorld/'),
         name: 'exportExcel',
         meta: { title: 'exportExcel' }
-      }
-=======
-        path: 'export-excel',
-        component: () => import('@/views/table'),
-        name: 'exportExcel',
-        meta: { title: 'exportExcel' }
       },
-      { path: 'export-selected-excel', component: ()=>import('@/views/form'), name: 'selectExcel', meta: { title: 'selectExcel' }},
->>>>>>> c8bbdc5e13b508b214ab9583b133e2b4cecc14cf
+      {
+        path: 'upload-excel',
+        component: ()=>import('@/views/helloWorld/'),
+        name: 'uploadExcel', meta: { title: 'uploadExcel' },
+      }
     ]
   },
   {
