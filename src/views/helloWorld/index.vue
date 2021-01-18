@@ -2,25 +2,22 @@
   <div class="container">
     <h1>健康小助手</h1>
     <el-form :model="form" label="表单">
-      <el-form-item label="早餐">
-        <el-input v-model="form.breakfest" maxlength="100" minlength="1" placeholder="请输入早餐吃什么"></el-input>
-      </el-form-item>
-      <el-form-item label="午餐">
-        <el-input v-model="form.lunch" maxlength="100" minlength="1" placeholder="请输入午餐吃什么"></el-input>
-      </el-form-item>
-      <el-form-item label="晚餐">
-        <el-input v-model="form.dinner" maxlength="100" minlength="1" placeholder="请输入晚餐吃什么"></el-input>
-      </el-form-item>
-
+      <my-input label="breakfest" :form="form"></my-input>
+      <my-input label="lunch" :form="form"></my-input>
+      <my-input label="dinner" :form="form"></my-input>
       <el-form-item>
         <el-button type="primary" size="mini" @click="submitForm">提交表单</el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
-
+ 
 <script>
+import MyInput from "./component/MyInput";
 export default {
+  components: {
+    MyInput,
+  },
   data() {
     return {
       form: {
@@ -47,8 +44,12 @@ export default {
 .container /deep/ .el-button {
   width: 400px;
 }
-.el-input {
-  width: 200px;
+.container /deep/.el-input {
+  width: auto;
+}
+.el-form .el-input {
+  width: 50%;
+  min-width: 200px;
 }
 .container {
   margin-left: 50px;
