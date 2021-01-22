@@ -5,9 +5,15 @@
       <my-input label="breakfest" :form="form"></my-input>
       <my-input label="lunch" :form="form"></my-input>
       <my-input label="dinner" :form="form"></my-input>
+         <el-form-item>
+        <el-input
+          
+        > 
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" size="mini" @click="submitForm">提交表单</el-button>
       </el-form-item>
+   
     </el-form>
   </div>
 </template>
@@ -24,6 +30,7 @@ export default {
         breakfest: "",
         lunch: "",
         dinner: "",
+        value: "",
       },
     };
   },
