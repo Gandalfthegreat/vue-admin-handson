@@ -1,21 +1,25 @@
 <template>
-  <div>
-    <header>
+  <div class="todoapp">
+    <header class="header">
       <h1>TodoList</h1>
       <!-- 点击回车，新建一个todo项-->
-      <input @keydown.enter="addTodo" v-model="newTodo" />
+      <input class="new-todo" @keydown.enter="addTodo" v-model="newTodo" />
     </header>
-    <section>
-      <ul>
-        <li v-for="todo in todos" :key="todo.id">
+    <section class="main">
+      <ul class="todo-list">
+        <li class="todo" :class="{completed: todo.completed}" v-for="todo in todos" :key="todo.id">
           <!-- 1.checkbox选中做完的项 2.双击编辑 3.删除-->
-          <div>
-            <span>{{ todo.title }}</span>
-            <button @click="removeItem(todo)">删除</button>
+          <div class="view">
+            <label>{{ todo.title }}</label>
+            <button class="destroy" @click="removeItem(todo)"></button>
           </div>
         </li>
       </ul>
     </section>
+    <footer class="footer" v-show="todos.length">
+      <span class="todo-count"></span>
+      <button class="clear-completed">clear</button>
+    </footer>
   </div>
 </template>
 
@@ -48,4 +52,5 @@ export default {
 </script>
 
 <style>
+@import "https://unpkg.com/todomvc-app-css@2.1.0/index.css";
 </style>
